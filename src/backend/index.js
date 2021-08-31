@@ -15,6 +15,8 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 app.use(bodyParser.json());
 
-registerRouteGetMapMarkers(app)
+registerRouteGetMapMarkers(app);
+
+app.get('/healthcheck', (_, res) => res.send('ok'));
 
 app.listen(3000);

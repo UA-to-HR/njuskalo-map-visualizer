@@ -1,14 +1,15 @@
 {
-  "name": "njuskalo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "njuskalo-map-visualizer",
+  "version": "0.0.1",
+  "description": "When it comes to finding something specific to some location (i.e. flats, garages), Croatian OLX – Njuskalo doesn't show the search results on map. You should open every post to understand where it's located. It's where this application comes",
+  "main": "src/backend/index.js",
   "scripts": {
-    "start": "ENV=prod node ./src/backend/index.js",
-    "start-dev": "ENV=dev nodemon ./src/backend/index.js"
+    "start": "NODE_ENV=prod node ./src/backend/index.js",
+    "start-dev": "NODE_ENV=dev nodemon ./src/backend/index.js"
   },
-  "author": "",
-  "license": "ISC",
+  "engines" : { "node" : ">=14" },
+  "author": "Valerii Maslenykov",
+  "license": "MIT",
   "dependencies": {
     "bluebird": "^3.7.2",
     "express": "^4.17.1",

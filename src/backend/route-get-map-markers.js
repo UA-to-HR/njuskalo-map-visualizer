@@ -13,8 +13,18 @@ module.exports = (app) => {
   });
 
   app.get("/api/map-markers", function (req, res) {
+
+    const njuskaloUrlRegex = /^https?:\/\/(www.)?njuskalo.hr/i;
+    const njuskaloUrl = req.query.url
+
+    if (!njuskaloUrl.match(njuskaloUrlRegex)) {
+      res.status(400);
+      res.json({error: 'Incorrect URL provided'});
+      return;
+    }
+
     const taskId = uuid();
-    logger.debug({ taskId }, "task is generated");
+    logger.debug({ taskId, njuskaloUrl }, "task is generated");
     let currentPage;
     let totalPages;
 
@@ -34,7 +44,7 @@ module.exports = (app) => {
     };
 
     process.nextTick(async () => {
-      const njuskaloDataByUrl = await getDataByUrl(req.query.url, onProgress, {
+      const njuskaloDataByUrl = await getDataByUrl(njuskaloUrl, onProgress, {
         taskId,
       });
       logger.debug("data by url is fetched", { njuskaloDataByUrl });

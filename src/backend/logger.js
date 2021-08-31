@@ -1,1 +1,1 @@
-module.exports = require('pino')({level: process.env.ENV === 'dev' ? 'debug' : 'info'});
+module.exports = require('pino')({level: process.env.NODE_ENV === 'dev' ? 'debug' : 'info'});
