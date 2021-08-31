@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Visualize njuskalo filter on map</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css"
+      integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.1/swiper-bundle.min.css"
+      integrity="sha512-EXVJEovrGhyARtQsxFq7uBxydTPPAwPaXJk+jol5Y59MXaWTcTrs3ISiy4LVuTFeSQf/Eijxrl6Y7siaoxhB6Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div class="map">
+      <div class="map-block" id="map-block"></div>
+      <div class="map-is-blocked-overlay" id="map-overlay"></div>
+    </div>
+
+    <div class="search-block">
+      <form method="post" class="search-block-form" id="search-form">
+        <p>Paste your <a href="https://njuskalo.hr">Njuskalo</a> URL:</p>
+        <div class="search-block-form-flex">
+          <input
+            class="search-block-form-input"
+            type="text"
+            id="search-form-input"
+            value="https://www.njuskalo.hr/iznajmljivanje-stanova/split"
+          />
+          <button class="search-block-form-button" id="search-form-button">
+            search
+          </button>
+          <div class="search-block-form-spinner-block" id="search-form-spinner">
+            <div
+              class="search-block-form-pages-progress"
+              id="search-form-progress"
+            >
+              1 / 10 pages
+            </div>
+            <div class="search-block-form-spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.1/swiper-bundle.min.js"
+      integrity="sha512-sRIpMolH1mH84KE0MOk2DGR+EcopqZBacqrVyxOFrVF2tOncVvahXLx5odSF75Hhhhfsn9HOmXTjOteD9Bjs6g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"
+      integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
